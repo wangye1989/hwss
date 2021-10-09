@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hwss/pages/home.dart';
+import 'package:hwss/pages/message.dart';
+import 'package:hwss/pages/mine.dart';
 
 class CBottomNavBar extends StatefulWidget {
+  List widgets = [
+    const HomePage(),
+    const MessagePage(),
+    const MinePage(),
+  ];
+
   CBottomNavBar({Key? key}) : super(key: key);
 
   @override
@@ -14,9 +23,11 @@ class _CBottomNavBarState extends State<CBottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled), label: "首页"),
+              icon: Icon(Icons.music_note_rounded), label: "音乐"),
           BottomNavigationBarItem(
               icon: Icon(Icons.chat_rounded), label: "消息"),
           BottomNavigationBarItem(
@@ -29,6 +40,7 @@ class _CBottomNavBarState extends State<CBottomNavBar> {
           });
         },
       ),
+      body: widget.widgets[_index],
     );
   }
 }

@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
                       elevation: MaterialStateProperty.all(12),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, "home");
+                      Navigator.pushNamed(context, "bottom_nav_bar");
                     },
                     child: const Text("登录")),
               ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hwss/widgets/widgets.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class MinePage extends StatelessWidget {
+  const MinePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +13,16 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: false,
         title: const Text(
-          "首页",
+          "我",
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: const Center(
-        child: Icon(
-          Icons.accessibility_new_outlined,
-          size: 48,
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("退出"),
+          onPressed: () {
+            Navigator.pushNamed(context, "landing_page");
+          },
         ),
       ),
     );
