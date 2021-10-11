@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         "landing_page": (context) => const LandingPage(),
         "login_page": (context) => const LoginPage(),
         "register_page": (context) => const RegisterPage(),
-        "home": (context) => const HomePage(),
+        "home": (context) => HomePage(),
         "bottom_nav_bar": (context) => CBottomNavBar(),
         "message_page": (context) => const MessagePage(),
         "mine_page": (context) => const MinePage(),

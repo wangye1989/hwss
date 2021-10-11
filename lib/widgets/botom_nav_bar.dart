@@ -5,7 +5,7 @@ import 'package:hwss/pages/mine.dart';
 
 class CBottomNavBar extends StatefulWidget {
   List widgets = [
-    const HomePage(),
+    HomePage(),
     const MessagePage(),
     const MinePage(),
   ];
@@ -27,7 +27,7 @@ class _CBottomNavBarState extends State<CBottomNavBar> {
         backgroundColor: Colors.white,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.music_note_rounded), label: "音乐"),
+              icon: Icon(Icons.home_filled), label: "首页"),
           BottomNavigationBarItem(
               icon: Icon(Icons.chat_rounded), label: "消息"),
           BottomNavigationBarItem(
