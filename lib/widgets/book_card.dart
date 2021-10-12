@@ -4,11 +4,14 @@ class BookCard extends StatelessWidget {
   final String cardTitle;
   final String? readingTime;
   final String bookName;
+  final Function()? readNow;
+
   const BookCard({
     Key? key,
     required this.cardTitle,
     required this.bookName,
     this.readingTime,
+    this.readNow,
   }) : super(key: key);
 
   @override
@@ -26,9 +29,9 @@ class BookCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             boxShadow: const [
               BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.05),
-                  offset: Offset(0.0, 10.0), //阴影xy轴偏移量
-                  blurRadius: 20.0, //阴影模糊程度
+                  color: Color.fromRGBO(0, 0, 0, 0.1),
+                  offset: Offset(0.0, 16.0), //阴影xy轴偏移量
+                  blurRadius: 32.0, //阴影模糊程度
                   spreadRadius: 1 //阴影扩散程度
                   )
             ],
@@ -64,11 +67,14 @@ class BookCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
+
+              // 进度条
+              SizedBox(
                 height: 2,
                 child: LinearProgressIndicator(
                   value: 0.5,
                   backgroundColor: Colors.white,
+                  color: Colors.grey[400],
                 ),
               ),
               Container(
@@ -80,12 +86,12 @@ class BookCard extends StatelessWidget {
                     Text(
                       "累计阅读 " + readingTime.toString() + " 分钟",
                       style: const TextStyle(
-                          fontSize: 14, color: Colors.black26),
+                          fontSize: 14, color: Colors.black45),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: readNow,
                       child: const Text(
-                        "开始阅读",
+                        "开始跟读",
                         style: TextStyle(fontSize: 16),
                       ),
                     ),

@@ -14,22 +14,25 @@ class SummaryCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
       ),
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
+      padding: const EdgeInsets.fromLTRB(10, 12, 8, 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               const Icon(
-                Icons.access_time,
-                color: Colors.grey,
+                Icons.access_time_filled_rounded,
+                color: Colors.black45,
                 size: 16,
               ),
               const SizedBox(width: 4),
               Text(
-                "本周已阅读 " + days.toString() + " 天",
-                style:
-                    const TextStyle(fontSize: 14, color: Colors.grey),
+                "本周阅读 " + days.toString() + " 天",
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.black45,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -38,20 +41,16 @@ class SummaryCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               const SizedBox(width: 20),
-              const Text(
-                "共 ",
-                style: TextStyle(fontSize: 14, color: Colors.black87),
-              ),
               Text(
                 hours.toString(),
                 style: const TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87),
               ),
               const Text(
-                " 小时",
-                style: TextStyle(fontSize: 16, color: Colors.black87),
+                " 分钟",
+                style: TextStyle(fontSize: 14, color: Colors.black87),
               ),
             ],
           )

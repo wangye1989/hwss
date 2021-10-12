@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 12),
             SummaryCard(
               days: 4,
-              hours: 18.2,
+              hours: 18,
             ),
             BookCard(
               cardTitle: '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
