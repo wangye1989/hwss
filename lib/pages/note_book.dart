@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hwss/widgets/widgets.dart';
 
-class MessagePage extends StatelessWidget {
-  const MessagePage({Key? key}) : super(key: key);
+class NoteBookPage extends StatelessWidget {
+  const NoteBookPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MessagePage extends StatelessWidget {
           automaticallyImplyLeading: false,
           centerTitle: false,
           title: const Text(
-            "消息",
+            "生词本",
             style: TextStyle(color: Colors.black),
           ),
         ),

@@ -19,10 +19,10 @@ class LandingPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 500,
+              height: 400,
             ),
             const Text(
-              "Data",
+              "响亮的 Slogan",
               style: TextStyle(
                   fontSize: 64,
                   color: Colors.white,

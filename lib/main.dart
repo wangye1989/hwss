@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hwss/pages/home.dart';
 import 'package:hwss/pages/login.dart';
 import 'package:hwss/pages/landing_page.dart';
-import 'package:hwss/pages/message.dart';
+import 'package:hwss/pages/note_book.dart';
 import 'package:hwss/pages/mine.dart';
 import 'package:hwss/pages/register.dart';
 import 'package:hwss/widgets/botom_nav_bar.dart';
@@ -21,19 +21,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor:
-            const Color.fromRGBO(249, 249, 249, 1),
-      ),
+          scaffoldBackgroundColor: Colors.grey[100],
+          primaryColor: Colors.green),
       routes: {
         "landing_page": (context) => const LandingPage(),
         "login_page": (context) => const LoginPage(),
         "register_page": (context) => const RegisterPage(),
         "home": (context) => HomePage(),
         "bottom_nav_bar": (context) => CBottomNavBar(),
-        "message_page": (context) => const MessagePage(),
+        "message_page": (context) => const NoteBookPage(),
         "mine_page": (context) => const MinePage(),
       },
-      initialRoute: "landing_page",
+      initialRoute: "bottom_nav_bar",
     );
   }
 }

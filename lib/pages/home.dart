@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hwss/widgets/circle_button.dart';
 import 'package:hwss/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
-  List wallPaperList = [];
-
   HomePage({Key? key}) : super(key: key);
 
   @override
@@ -15,30 +14,41 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //  Todo:
+        //[]导航栏需要增加 systemOverlayStyle 属性，让系统状态栏变成反色
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         centerTitle: false,
         title: const Text(
-          "背后的故事",
+          "资料库",
           style: TextStyle(color: Colors.black),
         ),
+        actions: [
+          CircleButton(
+            onPressed: () {},
+            icon: Icons.add_circle,
+            color: Colors.blue,
+            iconSize: 32,
+          )
+        ],
       ),
-      body: Scrollbar(
-        child: RefreshIndicator(
-          onRefresh: _onRefresh,
-          child: ListView(
-            padding: const EdgeInsets.all(16),
-            children: const [
-              WallPaperCard(
-                cardTitle:
-                    '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
-                imageUrl:
-                    'https://cn.bing.com/th?id=OHR.CordovanCourts_ZH-CN8989880218_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
-                timeStamp: '20200505',
-              ),
-            ],
-          ),
+      body: RefreshIndicator(
+        onRefresh: _onRefresh,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          children: const [
+            SizedBox(height: 12),
+            SummaryCard(
+              days: 4,
+              hours: 18.2,
+            ),
+            BookCard(
+              cardTitle: '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
+              bookName: "乔布斯在斯坦福的演讲",
+              readingTime: "34",
+            ),
+          ],
         ),
       ),
     );

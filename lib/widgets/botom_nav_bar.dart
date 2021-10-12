@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hwss/pages/home.dart';
-import 'package:hwss/pages/message.dart';
-import 'package:hwss/pages/mine.dart';
+import 'package:hwss/pages/note_book.dart';
+// import 'package:hwss/pages/mine.dart';
 
 class CBottomNavBar extends StatefulWidget {
   List widgets = [
     HomePage(),
-    const MessagePage(),
-    const MinePage(),
+    const NoteBookPage(),
   ];
 
   CBottomNavBar({Key? key}) : super(key: key);
@@ -27,11 +26,9 @@ class _CBottomNavBarState extends State<CBottomNavBar> {
         backgroundColor: Colors.white,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled), label: "首页"),
+              icon: Icon(Icons.book), label: "资料库"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.chat_rounded), label: "消息"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_sharp), label: "我")
+              icon: Icon(Icons.text_format_rounded), label: "生词"),
         ],
         currentIndex: _index,
         onTap: (v) {
