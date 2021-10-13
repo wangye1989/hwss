@@ -1,14 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  final String cardTitle;
   final String? readingTime;
   final String bookName;
   final Function()? readNow;
 
   const BookCard({
     Key? key,
-    required this.cardTitle,
     required this.bookName,
     this.readingTime,
     this.readNow,
@@ -84,15 +83,30 @@ class BookCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "累计阅读 " + readingTime.toString() + " 分钟",
+                      "累计 " + readingTime.toString() + " 分钟",
                       style: const TextStyle(
-                          fontSize: 14, color: Colors.black45),
+                          fontSize: 14, color: Colors.black),
                     ),
-                    TextButton(
-                      onPressed: readNow,
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(20))),
+                          padding: MaterialStateProperty.all(
+                            const EdgeInsets.fromLTRB(20, 4, 20, 4),
+                          ),
+                          elevation: MaterialStateProperty.all(0)),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, "reading_view_page");
+                      },
                       child: const Text(
                         "开始跟读",
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
@@ -101,7 +115,6 @@ class BookCard extends StatelessWidget {
             ],
           ),
         ),
-        // 底部 footer
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hwss/widgets/circle_button.dart';
 import 'package:hwss/widgets/widgets.dart';
 
@@ -15,9 +16,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         //  Todo:
-        //[]导航栏需要增加 systemOverlayStyle 属性，让系统状态栏变成反色
         elevation: 0,
         backgroundColor: Colors.transparent,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         automaticallyImplyLeading: false,
         centerTitle: false,
         title: const Text(
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               hours: 18,
             ),
             BookCard(
-              cardTitle: '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
+              // cardTitle: '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
               bookName: "乔布斯在斯坦福的演讲",
               readingTime: "34",
             ),
