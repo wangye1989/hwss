@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:hwss/widgets/circle_button.dart';
-import 'package:hwss/widgets/widgets.dart';
+import 'package:hwss/models/book.dart';
+import '../widgets/widgets.dart';
+import '../models/book.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -14,44 +14,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        //  Todo:
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-        automaticallyImplyLeading: false,
-        centerTitle: false,
-        title: const Text(
-          "资料库",
-          style: TextStyle(color: Colors.black),
-        ),
-        actions: [
-          CircleButton(
-            onPressed: () {},
-            icon: Icons.add_circle,
-            color: Colors.blue,
-            iconSize: 32,
-          )
-        ],
-      ),
+      appBar: buildAppBar(),
       body: RefreshIndicator(
         onRefresh: _onRefresh,
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-          children: const [
-            SizedBox(height: 12),
-            SummaryCard(
-              days: 4,
-              hours: 18,
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: const SummaryCard(days: 4, hours: 23),
             ),
-            BookCard(
-              // cardTitle: '正在照看花草的孩子和祖父铜雕，西班牙科尔多瓦 (© David M G/Alamy)',
-              bookName: "乔布斯在斯坦福的演讲",
-              readingTime: "34",
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                itemCount: books.length,
+                itemBuilder: (context, index) => BookCard(
+                  book: books[index],
+                ),
+              ),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: bottomNavBar(),
     );
   }
 

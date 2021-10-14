@@ -35,8 +35,7 @@ class MyApp extends StatelessWidget {
         "mine_page": (context) => const MinePage(),
         "reading_view_page": (context) => const ReadingViewPage(),
       },
-      // initialRoute: "bottom_nav_bar",
-      initialRoute: "bottom_nav_bar",
+      initialRoute: "home",
     );
   }
 }

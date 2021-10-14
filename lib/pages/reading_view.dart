@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../widgets/widgets.dart';
 
 class ReadingViewPage extends StatelessWidget {
   final String? title;
@@ -27,64 +28,7 @@ class ReadingViewPage extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          elevation: 0,
-          color: Colors.white,
-          shape: const CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const SizedBox(),
-              TextButton(
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.arrow_left_rounded,
-                      color: Colors.black87,
-                    ),
-                    Text(
-                      "上一句",
-                      style: TextStyle(color: Colors.black87),
-                    )
-                  ],
-                ),
-                onPressed: () {},
-              ),
-              TextButton(
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.replay_rounded,
-                      size: 20,
-                      color: Colors.black87,
-                    ),
-                    Text(
-                      "重复",
-                      style: TextStyle(color: Colors.black87),
-                    )
-                  ],
-                ),
-                onPressed: () {},
-              ),
-              TextButton(
-                child: Row(
-                  children: const [
-                    Text(
-                      "下一句",
-                      style: TextStyle(color: Colors.black87),
-                    ),
-                    Icon(
-                      Icons.arrow_right_rounded,
-                      color: Colors.black87,
-                    ),
-                  ],
-                ),
-                onPressed: () {},
-              ),
-              const SizedBox(),
-            ],
-          ),
-        ),
+        bottomNavigationBar: bottomBarForReading(),
         floatingActionButtonLocation:
             FloatingActionButtonLocation.miniEndFloat,
         floatingActionButton: FloatingActionButton(
